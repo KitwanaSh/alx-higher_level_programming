@@ -4,5 +4,5 @@ if __name__ == "__main__":
 
     names = dir(hidden_4)
     for nm in names:
-        if nm[:2] != "_":
+        if nm[:2] != "__":
             print("{}".format(nm))
