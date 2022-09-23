@@ -19,10 +19,10 @@ if __name__ == "__main__":
     b = int(sys.argv[3])
 
     if opera == '+':
-        print("{} + {} = {}".format(a, b, add(a, b)))
+        print("{} {} {} = {}".format(a, opera, b, add(a, b)))
     elif opera == '-':
-        print("{} - {} = {}".format(a, b, sub(a, b)))
+        print("{} {} {} = {}".format(a, opera, b, sub(a, b)))
     elif opera == '*':
-        print("{} * {} = {}".format(a, b, mul(a, b)))
+        print("{} {} {} = {}".format(a, opera, b, mul(a, b)))
     else:
-        print("{} / {} = {}".format(a, b, div(a, b)))
+        print("{} {} {} = {}".format(a, opera, b, div(a, b)))
