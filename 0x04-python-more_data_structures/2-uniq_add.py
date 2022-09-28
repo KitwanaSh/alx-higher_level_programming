@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 def uniq_add(my_list=[]):
-    if not my_list:
-        return None
     # return [set(x+y) for x in my_list for y in my_list]
-    return [sum(set(my_list)) for my_list in my_list] 
+    add_them = 0
+    for i in set(my_list):
+        add_them = add_them + i
+    return add_them
