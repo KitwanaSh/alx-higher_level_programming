@@ -86,14 +86,10 @@ At the end of this project, you are expected to be able to explain to anyone, wi
  </thead>
  <tbody>
   <tr>
-   <td>
-What function would you use to print the type of an object?
+   <td>What function would you use to print the type of an object?
 
 Write the name of the function in the file, without ().
-   </td>
-  </tr>
-  <tr>
-   <td>
+
 __Repo:__
 
 - GitHub repository: `alx-higher_level_programming`
