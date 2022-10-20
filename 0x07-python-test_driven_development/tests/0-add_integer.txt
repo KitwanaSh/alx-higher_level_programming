@@ -63,25 +63,25 @@ If one of the argument isn't either integer or float, raise a TypeError
 ::
 
 	>>> add_integer("String", 4)
-	Traceback (most recent call last)
+	Traceback (most recent call last):
 	TypeError: a must be an integer
 
 ::
 
 	>>> add_integer(5, "String_here")
-	Traceback (most recent call last)
+	Traceback (most recent call last):
 	TypeError: b must be an integer
 
 ::
 
 	>>> add_integer(None)
-	Traceback (most recent call last)
+	Traceback (most recent call last):
 	TypeError: a must be an integer
 
 ::
 
 	>>> add_integer(3.4, None)
-	Traceback (most recent call last)
+	Traceback (most recent call last):
 	TypeError: b must be an integer
 
 if a and b are neither float or integers, the TypeError message
@@ -89,5 +89,32 @@ should be printed for the first argument
 
 ::
 	>>> add_integer("me", "you")
-	Traceback (most recent call last)
+	Traceback (most recent call last):
 	TypeError: a must be an integer
+
+::
+
+    	>>> add_integer(float('inf'))
+    	Traceback (most recent call last):
+    	OverflowError: cannot convert float infinity to integer
+     
+
+::
+
+    	>>> add_integer(2, float('inf'))
+    	Traceback (most recent call last):
+    	OverflowError: cannot convert float infinity to integer
+
+And again with NaN numbers.
+
+::
+
+    	>>> add_integer(float('nan'))
+    	Traceback (most recent call last):
+    	ValueError: cannot convert float NaN to integer
+
+::
+
+    	>>> add_integer(2, float('nan'))
+    	Traceback (most recent call last):
+    	ValueError: cannot convert float NaN to integer
