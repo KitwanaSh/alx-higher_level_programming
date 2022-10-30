@@ -99,7 +99,6 @@ _Note that this is just an example. The number of tests you create can be differ
 - GitHub repository: `alx-higher_level_programming`
 - Directory: `0x0C-python-almost_a_circle`
 - File: `tests/`
-
    </td>
   </tr>
  </tbody>
