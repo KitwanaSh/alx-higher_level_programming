@@ -94,7 +94,7 @@ guillaume@ubuntu:~/$
 ```
 _Note that this is just an example. The number of tests you create can be different from the above example._
 
-__Repo:__
+**Repo:**
 
 - GitHub repository: `alx-higher_level_programming`
 - Directory: `0x0C-python-almost_a_circle`
@@ -104,7 +104,7 @@ __Repo:__
   </tr>
  </tbody>
 </table>
-
+<hr>
 <table>
  <thead>
   <tr>
@@ -169,7 +169,7 @@ __Repo:__
   </tr>
  </tbody>
 </table>
-
+<hr>
 <table>
  <thead>
   <tr>
