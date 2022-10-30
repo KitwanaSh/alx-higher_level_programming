@@ -53,9 +53,9 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 - Your code should use the pycodestyle (version 2.8.*)
 - All your files must be executable
 - The length of your files will be tested using wc
-- All your modules should be documented: python3 -c 'print(__import__("my_module").__doc__)'
-- All your classes should be documented: python3 -c 'print(__import__("my_module").MyClass.__doc__)'
-- All your functions (inside and outside a class) should be documented: python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
+- All your modules should be documented: python3 -c 'print(`__import__`("my_module").`__doc__)`'
+- All your classes should be documented: python3 -c 'print(`__import__`("my_module").MyClass.`__doc__`)'
+- All your functions (inside and outside a class) should be documented: python3 -c 'print(`__import__`("my_module").my_function.`__doc__`)' and python3 -c 'print(`__import__`("my_module").MyClass.my_function.`__doc__`)'
 - A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)
 ##### Python Unit Tests
 - Allowed editors: vi, vim, emacs
@@ -80,6 +80,7 @@ At the end of this project, you are expected to be able to explain to anyone, wi
   <tr>
    <td>
 All your files, classes and methods must be unit tested and be PEP 8 validated.
+
 ```
 guillaume@ubuntu:~/$ python3 -m unittest discover tests
 ...................................................................................
@@ -98,6 +99,7 @@ __Repo:__
 - GitHub repository: `alx-higher_level_programming`
 - Directory: `0x0C-python-almost_a_circle`
 - File: `tests/`
+
    </td>
   </tr>
  </tbody>
@@ -114,7 +116,7 @@ __Repo:__
    <td>
 Write the first class Base:
 
-Create a folder named models with an empty file __init__.py inside - with this file, the folder will become a Python package
+Create a folder named models with an empty file `__init__.py` inside - with this file, the folder will become a Python package
 
 Create a file named models/base.py:
 
@@ -125,6 +127,7 @@ Create a file named models/base.py:
 		- otherwise, increment `__nb_objects` and assign the new value to the public instance attribute `id`
 
 This class will be the “base” of all other classes in this project. The goal of it is to manage id attribute in all your future classes and to avoid duplicating the same code (by extension, same bugs)
+
 ```
 guillaume@ubuntu:~/$ cat 0-main.py
 #!/usr/bin/python3
@@ -155,6 +158,7 @@ guillaume@ubuntu:~/$ ./0-main.py
 12
 4
 guillaume@ubuntu:~/$ 
+
 ```
 __Repo:__
 
