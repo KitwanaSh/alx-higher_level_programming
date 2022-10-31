@@ -90,7 +90,7 @@ class Rectangle(Base):
     def __str__(self):
         """ string method """
         str_rectangle = "[Rectangle]"
-        str_id = "({}) ".format(self.id)
+        str_id = " ({}) ".format(self.id)
         str_x_by_y = "{}/{}".format(self.x, self.y)
         str_w_by_h = " - {}/{}".format(self.width, self.height)
 

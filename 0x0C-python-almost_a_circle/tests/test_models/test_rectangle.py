@@ -65,7 +65,7 @@ class TestRectangleScen(unittest.TestCase):
 
     def test_the_Base_instance(self):
         """ Test rectangle is a base instance """
-        new = Ractangle(1, 1)
+        new = Rectangle(1, 1)
         self.assertEqual(True, isinstance(new, Base))
 
     def test_incorrect_amnt_attrs(self):
@@ -173,17 +173,17 @@ class TestRectangleScen(unittest.TestCase):
         """ Test __str__ method returned ex """
         r1 = Rectangle(5, 3, 6, 7, 12)
         retn = "[Rectangle] (12) 6/7 - 5/3\n"
-        width patch('sys.stdout', new = StringIO()) as str_out:
+        with patch('sys.stdout', new = StringIO()) as str_out:
             print(r1)
             self.assertEqual(str_out.getvalue(), retn)
 
         r1.id = 1
         r1.width = 20
         r1.height = 31
-        retn = "[Rectange] (1) 6/7 - 20/31\n"
-        with ptch('sys.stdout', new=StringIO()) as str_out:
+        retn = "[Rectangle] (1) 6/7 - 20/31\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
             print(r1)
-            self.assertEqual(str_out.getvalue(), res)
+            self.assertEqual(str_out.getvalue(), retn)
 
     def test_str_3(self):
         """ Test __str__ method returned ex """
