@@ -2,7 +2,6 @@
 """ Module that has class Square, inherictance or Rectangle"""
 from models.rectangle import Rectangle
 
-
 class Square(Rectangle):
     """ Rectangle class """
 

@@ -2,7 +2,6 @@
 """Models that have class Rectangle,
 this is an inheritance of class Base
 """
-
 from models.base import Base
 
 
