@@ -6,6 +6,8 @@ from models.rectangle import Rectangle
 from unittest import TestCase
 from unittest.mock import patch
 from io import StringIO
+from models.square import Square
+
 class TestBaseScen(unittest.TestCase):
     """ Test Base class """
 

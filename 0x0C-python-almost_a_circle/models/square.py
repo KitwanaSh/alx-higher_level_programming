@@ -29,14 +29,14 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
-    def __str(self):
+    def __str__(self):
         """ str special method """
         str_rectangle = "[Square] "
         str_id = "({}) ".format(self.id)
         str_x_by_y = "{}/{} - ".format(self.x, self.y)
         str_size = "{}".format(self.size)
 
-        return str_squalre + str_id + str_x_by_y + str_size
+        return str_rectangle + str_id + str_x_by_y + str_size
 
     def update(self, *args, **kwargs):
         """ update method """
