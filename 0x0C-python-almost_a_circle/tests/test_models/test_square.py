@@ -232,3 +232,90 @@ class TestSquareMethods(unittest.TestCase):
         with patch('sys.stdout', new=StringIO()) as str_out:
             s1.display()
             self.assertEqual(str_out.getvalue(), res)
+
+    def test_update(self):
+        """ Test update method """
+        s1 = Square(3)
+        res = "[Square] (1) 0/0 - 3\n"
+
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(s1)
+            self.assertEqual(str_out.getvalue(), res)
+
+        s1.update(5)
+        res = "[Square] (5) 0/0 - 3\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(s1)
+            self.assertEqual(str_out.getvalue(), res)
+
+    def test_update_2(self):
+        """ Test update method """
+        s1 = Square(3)
+        res = "[Square] (1) 0/0 - 3\n"
+
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(s1)
+            self.assertEqual(str_out.getvalue(), res)
+
+        s1.update(5)
+        res = "[Square] (5) 0/0 - 3\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(s1)
+            self.assertEqual(str_out.getvalue(), res)
+
+    def test_update_3(self):
+        """ Test update method """
+        s1 = Square(1)
+        res = "[Square] (1) 0/0 - 1\n"
+
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(s1)
+            self.assertEqual(str_out.getvalue(), res)
+
+        s1.update(2, 2, 2, 2)
+        res = "[Square] (2) 2/2 - 2\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(s1)
+            self.assertEqual(str_out.getvalue(), res)
+
+        s1.update(y=3)
+        res = "[Square] (2) 2/3 - 2\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(s1)
+            self.assertEqual(str_out.getvalue(), res)
+
+        s1.update(id=1, size=10)
+        res = "[Square] (1) 2/3 - 10\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(s1)
+            self.assertEqual(str_out.getvalue(), res)
+
+    def test_update_4(self):
+        """ Test update method """
+        s1 = Square(10)
+        res = "[Square] (1) 0/0 - 10\n"
+
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(s1)
+            self.assertEqual(str_out.getvalue(), res)
+
+        dic = {'size': 3, 'y': 5}
+        s1.update(**dic)
+        res = "[Square] (1) 0/5 - 3\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(s1)
+            self.assertEqual(str_out.getvalue(), res)
+
+    def test_update_5(self):
+        """ Test update method """
+        s1 = Square(7)
+        res = "[Square] (1) 0/0 - 7\n"
+
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(s1)
+            self.assertEqual(str_out.getvalue(), res)
+
+        dic = {'id': 10, 'x': '5', 'y': 5}
+
+        with self.assertRaises(TypeError):
+            s1.update(**dic)
