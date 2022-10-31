@@ -95,3 +95,23 @@ class Rectangle(Base):
         str_w_by_h = " - {}/{}".format(self.width, self.height)
 
         return str_rectangle + str_id + str_x_by_y + str_w_by_h
+
+    def update(self, *args, **kwargs):
+        """ update method """
+        if args is not None and len(args) != 0:
+            list_attr = ['id', 'width', 'height', 'x', 'y']
+            for i in range(len(args)):
+                setattr(self, list_attr[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        """ method that returns a dictionary and its properties """
+        list_attr = ['id', 'width', 'height', 'x', 'y']
+        dict_res = {}
+
+        for key in list_attr:
+            dict_res[key] = getattr(self, key)
+
+        return dict_res
