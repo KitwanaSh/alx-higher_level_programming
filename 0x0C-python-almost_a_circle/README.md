@@ -79,7 +79,7 @@ At the end of this project, you are expected to be able to explain to anyone, wi
  <tbody>
   <tr>
    <td>
-All your files, classes and methods must be unit tested and be PEP 8 validated.
+All your files, classes and methods must be unit tested and be PEP 8 validated.                                                                                           
 
 ```
 guillaume@ubuntu:~/$ python3 -m unittest discover tests
