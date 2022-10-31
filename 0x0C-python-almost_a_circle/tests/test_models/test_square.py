@@ -380,3 +380,29 @@ class TestSquareMethods(unittest.TestCase):
             print(json_dictionary)
             self.assertEqual(str_out.getvalue(), res.replace("'", "\""))
 
+    def test_json_file(self):
+        """ Test Dictionary to JSON string """
+        s1 = Square(2)
+        dictionary = s1.to_dictionary()
+        json_dictionary = Base.to_json_string([dictionary])
+        res = "[{}]\n".format(dictionary.__str__())
+        res = res.replace("'", "\"")
+
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(json_dictionary)
+            self.assertEqual(str_out.getvalue(), res)
+
+        Square.save_to_file([s1])
+        res = "[{}]".format(dictionary.__str__())
+        res = res.replace("'", "\"")
+
+        with open("Square.json", "r") as file:
+            res2 = file.read()
+
+        self.assertEqual(res, res2)
+
+    def test_value_square(self):
+        """ Test value pased to Square """
+        with self.assertRaises(ValueError):
+            s1 = Square(-1)
+
