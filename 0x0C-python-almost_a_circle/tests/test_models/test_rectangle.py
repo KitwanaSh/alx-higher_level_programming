@@ -5,6 +5,7 @@ from models.base import Base
 from models.rectangle import Rectangle
 from unittest import TestCase
 from unittest.mock import patch
+from io import StringIO
 
 class TestRectangleScen(unittest.TestCase):
     """ Test Rectangle class """
@@ -159,3 +160,81 @@ class TestRectangleScen(unittest.TestCase):
         with patch('sys.stdout', new=StringIO()) as str_out:
             r1.display()
             self.assertEqual(str_out.getvalue(), res)
+
+    def test_str_1(self):
+        """ Test __str__ method returned ex """
+        r1 = Rectangle(4, 6, 2, 4)
+        retn= "[Rectangle] (1) 2/4 - 4/6\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(r1)
+            self.assertEqual(str_out.getvalue(), retn)
+
+    def test_str_2(self):
+        """ Test __str__ method returned ex """
+        r1 = Rectangle(5, 3, 6, 7, 12)
+        retn = "[Rectangle] (12) 6/7 - 5/3\n"
+        width patch('sys.stdout', new = StringIO()) as str_out:
+            print(r1)
+            self.assertEqual(str_out.getvalue(), retn)
+
+        r1.id = 1
+        r1.width = 20
+        r1.height = 31
+        retn = "[Rectange] (1) 6/7 - 20/31\n"
+        with ptch('sys.stdout', new=StringIO()) as str_out:
+            print(r1)
+            self.assertEqual(str_out.getvalue(), res)
+
+    def test_str_3(self):
+        """ Test __str__ method returned ex """
+        r1 = Rectangle(5, 10)
+        retn = "[Rectangle] (1) 0/0 - 5/10\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(r1)
+            self.assertEqual(str_out.getvalue(), retn)
+
+        r2 = Rectangle(22, 40, 3, 5)
+        retn = "[Rectangle] (2) 3/5 - 22/40\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(r2)
+            self.assertEqual(str_out.getvalue(), retn)
+
+        r3 = Rectangle(1, 1, 1, 1)
+        retn = "[Rectangle] (3) 1/1 - 1/1\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(r3)
+            self.assertEqual(str_out.getvalue(), retn)
+
+    def test_str_4(self):
+        """ Test __str__ method returned """
+        r1 = Rectangle(3, 3)
+        retn = "[Rectangle] (1) 0/0 - 3/3"
+        self.assertEqual(r1.__str__(), retn)
+
+    def test_display_3(self):
+        """ Test string printed """
+        r1 = Rectangle(5, 4, 1, 1)
+        retn = "\n #####\n #####\n #####\n #####\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            r1.display()
+            self.assertEqual(str_out.getvalue(), retn)
+
+    def test_display_4(self):
+        """ Test string printed """
+        r1 = Rectangle(3, 2)
+        retn = "###\n###\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            r1.display()
+            self.assertEqual(str_out.getvalue(), retn)
+
+        r1.x = 4
+        retn = "    ###\n    ###\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            r1.display()
+            self.assertEqual(str_out.getvalue(), retn)
+
+        r1.y = 2
+        retn = "\n\n    ###\n    ###\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            r1.display()
+            self.assertEqual(str_out.getvalue(), retn)
