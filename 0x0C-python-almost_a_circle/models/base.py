@@ -15,14 +15,14 @@ class Base:
             self.id = id
         else:
             Base.__nb_objects += 1
-           self.id = Base.__nb_objects
+            self.id = Base.__nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
         """ List to json string """
-        if list_of_dict is None or list_of_dict == "[]":
+        if list_dictionaries is None or list_dictionaries == "[]":
             return "[]"
-        return json.dumps(list_of_dict)
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
