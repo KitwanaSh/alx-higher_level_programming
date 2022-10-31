@@ -368,3 +368,15 @@ class TestSquareMethods(unittest.TestCase):
         with patch('sys.stdout', new=StringIO()) as str_out:
             print(type(s1_dictionary))
             self.assertEqual(str_out.getvalue(), res)
+
+    def test_dict_to_json(self):
+        """ Test Dictionary to JSON string """
+        s1 = Square(2)
+        dictionary = s1.to_dictionary()
+        json_dictionary = Base.to_json_string([dictionary])
+        res = "[{}]\n".format(dictionary.__str__())
+
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(json_dictionary)
+            self.assertEqual(str_out.getvalue(), res.replace("'", "\""))
+
