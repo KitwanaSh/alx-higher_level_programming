@@ -3,6 +3,7 @@
 The rectangle class
 """
 
+
 class Rectangle():
     """ The rectangle class that includes
     - private attributes: width and height
@@ -20,7 +21,7 @@ class Rectangle():
             width: int - private attribute
             height: int- private attribute
         """
-        
+
         self.width = width
         self.height = height
         type(self).number_of_instances += 1
@@ -68,12 +69,13 @@ class Rectangle():
 
     def __str__(self):
         """ Print the attribute in string usign the  '#' """
-        if (self.__height == 0) or (self.__width == 0):
-                return ("")
+        if self.__width == 0 or self.__height == 0:
+            return ("")
         else:
             rect = []
             for i in range(self.__height):
-                [rect.append(str(self.print_symbol)) for j in range(self.__width)]
+                for j in range(self.__width):
+                    rect.append(str(Self.print_symbol))
                 if i != self.__height - 1:
                     rect.append("\n")
             return ("".join(rect))
