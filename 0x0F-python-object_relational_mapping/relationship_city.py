@@ -2,6 +2,7 @@
 """ Simple city object class """
 
 from lib2to3.pytree import Base
+from unicodedata import name
 from sqlalchemy.ext.declarative import declarative_base
 from sre_parse import State
 from sqlalchemy import String, Column, Integer, ForeignKey, null

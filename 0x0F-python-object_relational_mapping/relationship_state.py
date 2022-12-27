@@ -6,7 +6,6 @@ from lib2to3.pytree import Base
 from sre_parse import State
 from unicodedata import name
 from sqlalchemy.ext.declarative import declarative_base
-from sre_parse import State
 from sqlalchemy import Integer, String, Column
 from sqlalchemy.orm import relationship
 from relationship_city import Base, City
